@@ -1,32 +1,49 @@
 // Loader
-window.addEventListener("load", function(){
-    setTimeout(function(){
-        document.querySelector(".loader").style.display="none";
-    },1500);
-});
 
-// Scroll to work section
-document.querySelector(".scrollBtn").addEventListener("click", () => {
-    document.getElementById("work").scrollIntoView({behavior:"smooth"});
-});
+window.addEventListener("load",()=>{
 
-// Scroll to contact
-document.querySelectorAll(".contactBtn").forEach(btn => {
-    btn.addEventListener("click", () => {
-        document.getElementById("contact").scrollIntoView({behavior:"smooth"});
-    });
-});
+setTimeout(()=>{
 
-// Hero scroll animation (subtle parallax)
-window.addEventListener('scroll', () => {
-    const heroText = document.querySelector('.heroContent h1');
-    const scrollY = window.scrollY;
-    heroText.style.transform = `translateY(${scrollY * 0.3}px)`;
-    heroText.style.opacity = `${1 - scrollY / 800}`;
-});
+document.querySelector(".loader").style.display="none"
 
-// Video hover play
-document.querySelectorAll(".videoCard video").forEach(video=>{
-    video.addEventListener("mouseenter",()=>{video.play()});
-    video.addEventListener("mouseleave",()=>{video.pause()});
-});
+},1500)
+
+})
+
+
+
+
+// HERO PARALLAX
+
+window.addEventListener("scroll",()=>{
+
+const heroContent = document.querySelector(".heroContent")
+
+let scroll = window.scrollY
+
+heroContent.style.transform = `translateY(${scroll*0.3}px)`
+
+heroContent.style.opacity = 1 - scroll/600
+
+})
+
+
+
+
+// VIDEO HOVER PLAY
+
+document.querySelectorAll("video").forEach(v=>{
+
+v.addEventListener("mouseenter",()=>{
+
+v.play()
+
+})
+
+v.addEventListener("mouseleave",()=>{
+
+v.pause()
+
+})
+
+})
