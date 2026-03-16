@@ -198,6 +198,8 @@ width:100%;
 height:100%;
 
 object-fit:cover;
+border-radius:4px;
+opacity:0.95;
 
 }
 
@@ -217,11 +219,16 @@ font-weight:600;
 /* QUOTE SECTION */
 
 .quoteSection {
-  position: relative; /* zorg dat side video binnen deze sectie blijft */
-  padding:20px 10%;
+  position: relative;
+  padding:40px 10%;
   background:black;
+
+  /* Flex voor side video en quote */
   display:flex;
-  justify-content:flex-start;
+  flex-direction:row;       /* video rechts, quote links */
+  justify-content:space-between;
+  align-items:flex-start;   /* video iets lager dan quote */
+  gap:40px;
 }
 
 .quoteWrapper{
@@ -276,22 +283,19 @@ gap:80px;
 
 /* QUOTE VIDEO RECHTS - SIDE PANEL EFFECT */
 .quoteImage {
-  position: absolute;       /* zodat hij los van de quote kan staan */
-  top: 10%;                 /* beetje lager dan de top van de sectie */
-  right: 0;                 /* plakt aan de rechterkant */
-  width: 40%;               /* maakt de video veel groter */
-  max-width:600px;          /* limiet zodat het niet te groot wordt */
-  height: auto;
-  z-index:1;                /* achter de tekst van de quote */
-  pointer-events:none;      /* voorkomt dat de video klikbaar is */
+  flex-shrink:0;       /* video behoudt zijn breedte */
+  width:45%;           /* groter dan eerst */
+  max-width:600px;
+  height:auto;
+  border-radius:4px;
+  overflow:hidden;
 }
 
 .quoteImage video {
   width:100%;
   height:100%;
   object-fit:cover;
-  border-radius:4px;        /* subtiel afgeronde hoeken */
-  opacity:0.95;             /* iets minder fel */
+  opacity:0.95;
 }
 
 
