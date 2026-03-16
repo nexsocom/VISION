@@ -53,27 +53,35 @@ document.body.classList.add("loaded");
 
 });
 
+// PAGE FADE IN
+window.addEventListener("load", () => {
+  document.body.classList.add("loaded");
+});
 
+
+// PAGE FADE OUT (alleen voor echte pagina links)
 document.querySelectorAll("a").forEach(link => {
 
-link.addEventListener("click", function(e){
+  const href = link.getAttribute("href");
 
-const target = this.getAttribute("href");
+  if(!href) return;
 
-if(target && target.includes(".html")){
+  if(href.startsWith("#")) return; // skip anchors
 
-e.preventDefault();
+  if(href.startsWith("http")) return; // skip externe links
 
-document.body.classList.remove("loaded");
+  link.addEventListener("click", function(e){
 
-setTimeout(()=>{
+    e.preventDefault();
 
-window.location = target;
+    document.body.classList.remove("loaded");
 
-},400);
+    setTimeout(()=>{
 
-}
+      window.location.href = href;
 
-});
+    }, 500);
+
+  });
 
 });
