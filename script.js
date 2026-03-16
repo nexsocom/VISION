@@ -1,12 +1,18 @@
-// Loader
+// LOADER
 
 window.addEventListener("load",()=>{
 
 setTimeout(()=>{
 
+document.querySelector(".loader").style.opacity="0"
+
+setTimeout(()=>{
+
 document.querySelector(".loader").style.display="none"
 
-},1500)
+},600)
+
+},1200)
 
 })
 
@@ -21,9 +27,9 @@ const heroContent = document.querySelector(".heroContent")
 
 let scroll = window.scrollY
 
-heroContent.style.transform = `translateY(${scroll*0.3}px)`
+heroContent.style.transform = `translateY(${scroll*0.25}px)`
 
-heroContent.style.opacity = 1 - scroll/600
+heroContent.style.opacity = 1 - scroll/500
 
 })
 
@@ -32,17 +38,17 @@ heroContent.style.opacity = 1 - scroll/600
 
 // VIDEO HOVER PLAY
 
-document.querySelectorAll("video").forEach(v=>{
+document.querySelectorAll("video").forEach(video=>{
 
-v.addEventListener("mouseenter",()=>{
+video.addEventListener("mouseenter",()=>{
 
-v.play()
+video.play()
 
 })
 
-v.addEventListener("mouseleave",()=>{
+video.addEventListener("mouseleave",()=>{
 
-v.pause()
+video.pause()
 
 })
 
