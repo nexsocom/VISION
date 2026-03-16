@@ -283,14 +283,15 @@ gap:80px;
 
 /* QUOTE VIDEO RECHTS - SIDE PANEL EFFECT */
 
-.quoteImage {
+.quoteImage{
+  position:relative;
+
+  width:50%;
+  max-width:750px;
+
+  right:-10vw; /* trekt hem naar de rand van het scherm */
+
   flex-shrink:0;
-  width:45%;
-  max-width:700px;
-
-  margin-right:-10%; /* dit trekt de video tot tegen de rand */
-
-  border-radius:4px;
   overflow:hidden;
 }
 
@@ -381,6 +382,9 @@ width:500px;
 margin-right:30px;
 
 display:inline-block;
+
+border-radius:4px;
+opacity:0.95;
 
 }
 
