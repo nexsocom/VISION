@@ -274,20 +274,26 @@ gap:80px;
 }
 
 
-/* FOTO RECHTS */
+/* VIDEO RECHTS */
 
-.quoteImage{
-
-margin-top:60px; /* dit duwt de foto iets naar beneden */
-
+/* QUOTE VIDEO RECHTS - SIDE PANEL EFFECT */
+.quoteImage {
+  position: absolute;       /* zodat hij los van de quote kan staan */
+  top: 20%;                 /* beetje lager dan de top van de sectie */
+  right: 0;                 /* plakt aan de rechterkant */
+  width: 40%;               /* maakt de video veel groter */
+  max-width:600px;          /* limiet zodat het niet te groot wordt */
+  height: auto;
+  z-index:1;                /* achter de tekst van de quote */
+  pointer-events:none;      /* voorkomt dat de video klikbaar is */
 }
 
-.quoteImage video{
-  width:320px; /* subtiel formaat */
-  max-width:100%;
-  border-radius:2px;
-  opacity:0.9;
-  object-fit:cover; /* video vult netjes het frame */
+.quoteImage video {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:4px;        /* subtiel afgeronde hoeken */
+  opacity:0.95;             /* iets minder fel */
 }
 
 
