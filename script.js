@@ -46,3 +46,34 @@ heroImage.style.transform = "translateY(" + scroll * 0.35 + "px)";
 }
 
 });
+
+window.addEventListener("load", () => {
+
+document.body.classList.add("loaded");
+
+});
+
+
+document.querySelectorAll("a").forEach(link => {
+
+link.addEventListener("click", function(e){
+
+const target = this.getAttribute("href");
+
+if(target && target.includes(".html")){
+
+e.preventDefault();
+
+document.body.classList.remove("loaded");
+
+setTimeout(()=>{
+
+window.location = target;
+
+},400);
+
+}
+
+});
+
+});
