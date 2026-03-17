@@ -69,3 +69,26 @@ if (contactLink && contactSection) {
     });
   });
 }
+
+// SCROLL FIX VOOR NAVBAR LINKS
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', function(e){
+    const href = this.getAttribute('href');
+    if(!href.startsWith('#')) return; // alleen interne anchors
+    e.preventDefault();
+
+    const target = document.querySelector(href);
+    if(!target) return;
+
+    let offset = 0; // standaard: helemaal bovenaan
+
+    if(href === '#contact'){
+      offset = 120; // header hoogte
+    }
+
+    window.scrollTo({
+      top: target.offsetTop - offset,
+      behavior: 'smooth'
+    });
+  });
+});
