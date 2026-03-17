@@ -53,3 +53,4 @@ document.querySelector('a[href="#specialisaties"]').addEventListener('click', fu
     behavior: 'smooth'
   });
 });
+}
