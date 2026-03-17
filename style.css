@@ -123,13 +123,14 @@ opacity:0.7;
 
 /* KNOCKOUT LOGO IN HERO */
 .logoCutout{
-  font-family:'Cinzel', serif;
-  font-size:110px;
-  color:white;
+  opacity:0;
+  transform:translateY(20px);
+  transition: all 1s ease;
+}
 
-  text-shadow: 
-    0 0 10px rgba(255,255,255,0.2),
-    0 0 30px rgba(255,255,255,0.1);
+body.loaded .logoCutout{
+  opacity:1;
+  transform:translateY(0);
 }
 
 /* Hero tekst en knop */
