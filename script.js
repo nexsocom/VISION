@@ -92,3 +92,31 @@ document.querySelectorAll('nav a').forEach(link => {
     });
   });
 });
+
+// NAVBAR INTERNAL SCROLL FIX
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', function(e){
+    const href = this.getAttribute('href');
+    if(!href.startsWith('#')) return; // skip externe links
+    e.preventDefault();
+
+    let target = document.querySelector(href);
+    if(!target) return;
+
+    let offset = 0; // standaard: helemaal bovenaan
+
+    if(href === '#contact'){
+      offset = 120; // header hoogte
+    } else if(href === '#specialisaties'){
+      offset = 0; // speciale fix: grid bovenaan, geen ruimte er boven
+      // scroll naar de .specGrid ipv de sectie zelf
+      const specGrid = document.querySelector('.specGrid');
+      if(specGrid) target = specGrid;
+    }
+
+    window.scrollTo({
+      top: target.offsetTop - offset,
+      behavior: 'smooth'
+    });
+  });
+});
