@@ -820,3 +820,25 @@ font-size:32px;
 }
 
 }
+
+@media (max-width: 768px){
+
+header{
+display:none;
+}
+
+.serviceHeroText h1{
+font-size:42px;       /* kleiner */
+line-height:1.2;      /* meer ademruimte */
+word-break:break-word; /* voorkomt afsnijden */
+}
+
+.serviceHeroText{
+padding:0 5%;
+}
+
+.serviceHero{
+height:60vh; /* minder hoog */
+}
+
+}
