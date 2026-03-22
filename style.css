@@ -220,23 +220,6 @@ transition:transform 0.8s ease;
   margin-bottom: 80px;
 }
 
-.processGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-}
-
-.processItem {
-  text-align: left;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  padding-top: 20px;
-}
-
-.processItem span {
-  font-size: 14px;
-  opacity: 0.4;
-  letter-spacing: 2px;
-}
 
 .processItem h3 {
   margin: 10px 0;
@@ -249,6 +232,94 @@ transition:transform 0.8s ease;
   opacity: 0.7;
 }
 
+
+/* ================= PROCESS LINE SYSTEM ================= */
+
+.processWrapper {
+  position: relative;
+}
+
+/* HORIZONTALE LIJN */
+.processLine {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+}
+
+/* GRID */
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  position: relative;
+}
+
+/* ITEM */
+.processItem {
+  position: relative;
+  text-align: left;
+  padding-top: 40px;
+}
+
+/* NUMMER OP LIJN */
+.processNumber {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  font-size: 14px;
+  letter-spacing: 2px;
+
+  background: black;
+  padding: 4px 10px;
+
+  border: 1px solid rgba(255,255,255,0.15);
+  opacity: 0.6;
+}
+
+/* TITEL + TEXT */
+.processItem h3 {
+  margin: 20px 0 10px;
+  font-size: 22px;
+}
+
+.processItem p {
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.7;
+}
+
+/* SUBTIELE HOVER */
+.processItem:hover .processNumber {
+  opacity: 1;
+  border-color: rgba(255,255,255,0.4);
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px){
+
+.processLine {
+  display: none; /* geen lijn op mobiel */
+}
+
+.processGrid {
+  grid-template-columns: 1fr;
+}
+
+.processItem {
+  padding-top: 20px;
+}
+
+.processNumber {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+}
 
 
 /* ================= WHY SECTION ================= */
