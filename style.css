@@ -389,10 +389,23 @@ nav a:hover {
 
 .quoteImage {
   position: relative;
-  width: 50%;
-  max-width: 750px;
-  right: -10vw;
+  width: 45%;
+  max-width: 650px;
+
+  margin-right: 5%; /* haalt hem weg van de rand */
+  
+  border-radius: 12px;
   overflow: hidden;
+
+  flex-shrink: 0;
+
+  /* subtiele premium border */
+  border: 1px solid rgba(255,255,255,0.08);
+
+  /* diepte */
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+
+  background: rgba(255,255,255,0.02); /* mini glow base */
 }
 
 .quoteImage video {
