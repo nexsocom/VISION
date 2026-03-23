@@ -151,39 +151,33 @@ nav a:hover {
 /* rechter blok (| + tekst) */
 .heroRight{
   display:flex;
-  align-items:center;
+  align-items:flex-start; /* 👈 KEY FIX */
   gap:15px;
-}
-
-/* verticale streep */
-.divider{
-  font-size:40px;
-  opacity:0.5;
 }
 
 /* 2-line text block */
 .heroSub{
   display:flex;
   flex-direction:column;
-  justify-content:center;
+  align-items:flex-start; /* 👈 start vanaf divider */
 
   font-family:'Inter', sans-serif;
   font-weight:300;
   text-transform:uppercase;
 
   letter-spacing:2px;
-  line-height:1.1;
+  line-height:1.05;
 
   opacity:0.75;
 }
 
 /* individuele lijnen */
 .heroSub span{
-  font-size:26px;
+  font-size:36px;
 }
 
 .divider{
-  height:60%;
+  height:70%;
   width:1px;
   background:rgba(255,255,255,0.3);
   display:block;
