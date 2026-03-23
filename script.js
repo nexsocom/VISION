@@ -14,13 +14,20 @@ if (heroContent) {
 
 // ================= VIDEO HOVER =================
 
-// 👉 FIX: quote video uitsluiten (die moet ALTIJD spelen)
-document.querySelectorAll("video").forEach(video => {
+// ALLEEN gallery videos hover play
+document.querySelectorAll(".cinematicItem video").forEach(video => {
 
-  if (video.closest(".quoteImage")) return; // skip quote video
+  video.muted = true; // nodig voor autoplay
 
-  video.addEventListener("mouseenter", () => video.play());
-  video.addEventListener("mouseleave", () => video.pause());
+  video.addEventListener("mouseenter", () => {
+    video.currentTime = 0;
+    video.play().catch(() => {}); // voorkomt errors
+  });
+
+  video.addEventListener("mouseleave", () => {
+    video.pause();
+    video.currentTime = 0;
+  });
 
 });
 
