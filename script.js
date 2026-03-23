@@ -1,75 +1,71 @@
-// HERO PARALLAX
+// ================= HERO PARALLAX =================
 
 const heroContent = document.querySelector(".heroContent");
 
-if(heroContent){
+if (heroContent) {
+  window.addEventListener("scroll", () => {
+    let scroll = window.scrollY;
 
-window.addEventListener("scroll",()=>{
-
-let scroll = window.scrollY;
-
-heroContent.style.transform = `translateY(${scroll*0.25}px)`;
-heroContent.style.opacity = 1 - scroll/500;
-
-});
-
+    heroContent.style.transform = `translateY(${scroll * 0.25}px)`;
+    heroContent.style.opacity = 1 - scroll / 500;
+  });
 }
 
 
+// ================= VIDEO HOVER =================
 
-// VIDEO HOVER PLAY
+// 👉 FIX: quote video uitsluiten (die moet ALTIJD spelen)
+document.querySelectorAll("video").forEach(video => {
 
-document.querySelectorAll("video").forEach(video=>{
+  if (video.closest(".quoteImage")) return; // skip quote video
 
-video.addEventListener("mouseenter",()=>video.play());
-video.addEventListener("mouseleave",()=>video.pause());
+  video.addEventListener("mouseenter", () => video.play());
+  video.addEventListener("mouseleave", () => video.pause());
 
 });
 
 
-
-// SERVICE PAGE PARALLAX
+// ================= SERVICE PARALLAX =================
 
 const heroImage = document.querySelector(".serviceHero img");
 
-if(heroImage){
-
-window.addEventListener("scroll",()=>{
-
-const scroll = window.scrollY;
-
-heroImage.style.transform = `translateY(${scroll*0.35}px)`;
-
-});
-
-  
+if (heroImage) {
+  window.addEventListener("scroll", () => {
+    const scroll = window.scrollY;
+    heroImage.style.transform = `translateY(${scroll * 0.35}px)`;
+  });
 }
 
 
-// NAVBAR INTERNAL SCROLL FIX
+// ================= NAVBAR SCROLL =================
+
 document.querySelectorAll('nav a').forEach(link => {
-  link.addEventListener('click', function(e){
+  link.addEventListener('click', function (e) {
+
     const href = this.getAttribute('href');
-    if(!href.startsWith('#')) return; // skip externe links
+    if (!href.startsWith('#')) return;
+
     e.preventDefault();
 
     let target = document.querySelector(href);
-    if(!target) return;
+    if (!target) return;
 
-    let offset = 0; // standaard: helemaal bovenaan
+    let offset = 0;
 
-    if(href === '#contact'){
-      offset = 120; // header hoogte
-    } else if(href === '#specialisaties'){
-      offset = 0; // speciale fix: grid bovenaan, geen ruimte er boven
-      // scroll naar de .specGrid ipv de sectie zelf
+    if (href === '#contact') {
+      offset = 120;
+    }
+
+    if (href === '#specialisaties') {
       const specGrid = document.querySelector('.specGrid');
-      if(specGrid) target = specGrid;
+      if (specGrid) target = specGrid;
+      offset = 0;
     }
 
     window.scrollTo({
       top: target.offsetTop - offset,
       behavior: 'smooth'
     });
+
   });
 });
