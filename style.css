@@ -557,3 +557,71 @@ footer {
 }
 
 }
+
+/* ================= MOBILE OPTIMIZATIONS ================= */
+
+@media (max-width: 768px) {
+  /* Verberg de navigatie links */
+  nav ul {
+    display: none;
+  }
+
+  /* Logo centreren in de navbar */
+  nav {
+    justify-content: center;
+    padding: 15px 5%;
+  }
+
+  /* Maak de grote VERTEX tekst kleiner zodat hij op het scherm past */
+  .logoCutout {
+    font-size: 60px;
+  }
+
+  /* Pas de subtitels aan voor mobiel */
+  .heroSub span {
+    font-size: 24px;
+  }
+
+  .heroTitle {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .heroRight {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .divider {
+    width: 50px;
+    height: 1px;
+    align-self: center;
+  }
+
+  /* Zet grids onder elkaar in plaats van naast elkaar */
+  .specGrid, 
+  .processGrid, 
+  .whyGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Quote sectie aanpassen */
+  .quoteLayout, .quoteSection {
+    flex-direction: column;
+    padding: 50px 5%;
+  }
+
+  .quoteImage {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .processLine {
+    display: none; /* De horizontale lijn klopt niet meer in verticale stand */
+  }
+
+  .specialisaties, .processSection, .whySection {
+    padding: 80px 5%;
+  }
+}
