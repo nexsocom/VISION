@@ -145,42 +145,48 @@ nav a:hover {
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:25px;
+  gap:30px;
 }
 
-/* rechter blok (| + tekst) */
+/* rechter blok */
 .heroRight{
   display:flex;
-  align-items:flex-start; /* 👈 KEY FIX */
-  gap:15px;
+  align-items:stretch; /* 👈 zorgt dat divider full height kan worden */
+  gap:20px;
 }
 
-/* 2-line text block */
+/* divider FIX */
+.divider{
+  width:1px;
+  background:rgba(255,255,255,0.35);
+
+  align-self:stretch;   /* 👈 KEY: full height van content */
+  height:auto;          /* 👈 laat flex het bepalen */
+
+  margin:0;             /* reset eventuele spacing */
+}
+
+/* tekst rechts */
 .heroSub{
   display:flex;
   flex-direction:column;
-  align-items:flex-start; /* 👈 start vanaf divider */
+  justify-content:space-between; /* 👈 verdeelt mooi over hoogte */
+
+  align-items:flex-start;
 
   font-family:'Inter', sans-serif;
   font-weight:300;
   text-transform:uppercase;
 
   letter-spacing:2px;
-  line-height:1.05;
+  line-height:1;
 
-  opacity:0.75;
+  opacity:0.8;
 }
 
-/* individuele lijnen */
+/* tekst grootte FIX */
 .heroSub span{
-  font-size:36px;
-}
-
-.divider{
-  height:70%;
-  width:1px;
-  background:rgba(255,255,255,0.3);
-  display:block;
+  font-size:42px; /* 👈 groter = match met VERTEX hoogte */
 }
 
 /* ================= SPECIALISATIES ================= */
