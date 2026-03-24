@@ -12,27 +12,6 @@ if (heroContent) {
 }
 
 
-// ================= VIDEO HOVER =================
-
-// ALLEEN gallery videos hover play
-document.querySelectorAll(".cinematicItem video").forEach(video => {
-
-  video.muted = true; // nodig voor autoplay
-
-  video.addEventListener("mouseenter", () => {
-    video.currentTime = 0;
-    video.play().catch(() => {}); // voorkomt errors
-  });
-
-  video.addEventListener("mouseleave", () => {
-    video.pause();
-    video.currentTime = 0;
-  });
-
-});
-
-
-
 // ================= SERVICE PARALLAX =================
 
 const heroImage = document.querySelector(".serviceHero img");
